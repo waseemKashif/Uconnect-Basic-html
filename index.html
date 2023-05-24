@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="bg-[#050247]">
+      <nav
+        class="px-5 sm:px-20 flex flex-wrap pb-10 md:flex-nowrap justify-between items-center text-[#9b99b4] text-xl font-semibold relative"
+      >
+        <img src="skillsclublogo.svg" alt="icon" />
+
+        <ul
+          id="navList"
+          class="hidden sm:flex gap-6 md:gap-10 items-center"
+        >
+          <li class="pb-2 sm:pb-0"><a href="/" class="hover:text-gray-100 ">Home</a></li>
+          <li class="pb-2 sm:pb-0"><a href="/" class="hover:text-gray-100 ">Contact</a></li>
+          <li class="pb-2 sm:pb-0"><a href="/" class="hover:text-gray-100 ">About</a></li>
+          <li class="pb-2 sm:pb-0"><a href="/" class="hover:text-gray-100 ">Products</a></li>
+        </ul>
+        <div class="sm:hidden block">
+          <i class="fa fa-bars sm:hidden" aria-hidden="true"></i>
+          <i class="fa fa-window-close hidden" aria-hidden="true"></i>
+        </div>
+      </nav>
+      <!-- navbar ends here -->
+
+      <!-- header starts here -->
+      <div class=" px-5 flex text-white pb-10 px-20 ">
+        <div class="flex flex-col gap-10">
+          <h1 class="text-2xl font-bold">heading</h1>
+          <p class="text-white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis, animi.
+          </p>
+          <div class="flex gap-4">
+            <button class="px-10 rounded-sm bg-orange-600">abc</button>
+            <button class="px-10 rounded-sm bg-gray-300">Google</button>
+          </div>
+        </div>
+        <div>
+          <img src="" alt="my image" />
+        </div>
+      </div>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navList = document.querySelector("#navList");
+        const menuIcon = document.querySelector(".fa-bars");
+        const closeIcon = document.querySelector(".fa-window-close");
+
+
+        menuIcon.addEventListener("click", function () {
+            navList.classList.add("absolute","w-full","top-[70px]","bg-[#050247]","z-10","py-6");
+            navList.classList.remove("hidden","sm:flex")
+          
+            menuIcon.classList.add("hidden");
+            closeIcon.classList.remove("hidden");
+            console.log("working....");
+        });
+  
+          closeIcon.addEventListener('click',function(){
+            closeIcon.classList.add("hidden");
+              menuIcon.classList.remove( "hidden");
+             navList.classList.remove("block","absolute","w-full","top-[70px]","bg-[#050247]","z-10","py-8");
+              navList.classList.add("sm:flex");
+            console.log("closee....");
+
+          })
+        
+      });
+    </script>
+  </body>
+</html>
